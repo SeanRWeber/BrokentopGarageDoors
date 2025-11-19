@@ -28,5 +28,3 @@ export const sanitizeUrl = (url: string): string => {
   return escapeHtml(trimmed);
 };
 
-export const sanitizePhone = (phone: string): string =>
-  phone.replace(/[^0-9+-]/g, '');

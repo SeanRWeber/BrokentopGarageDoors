@@ -1,10 +1,10 @@
 /**
  * 404 handler - Single Responsibility: Not found handling
- * Pure function, user-friendly error page
+ * Pure function, user-friendly error page, correct status code
  */
 
 import { Layout } from '../components/layout.ts';
-import { createHtmlResponse } from '../utils/response.ts';
+import { createNotFoundResponse } from '../utils/response.ts';
 
 export const handleNotFound = (): Response => {
   const content = `
@@ -23,5 +23,5 @@ export const handleNotFound = (): Response => {
     content,
   });
 
-  return createHtmlResponse(html);
+  return createNotFoundResponse(html);
 };

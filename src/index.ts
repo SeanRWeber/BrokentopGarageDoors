@@ -3,11 +3,10 @@
  * Cloudflare Workers edge handler, zero globals
  */
 
-import type { Env } from './types/core.ts';
 import { findRoute } from './router/routes.ts';
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request): Promise<Response> {
     try {
       const url = new URL(request.url);
       const route = findRoute(url.pathname);
