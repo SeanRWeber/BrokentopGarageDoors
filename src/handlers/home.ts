@@ -1,14 +1,24 @@
 /**
  * Home handler - Single Responsibility: Homepage request handling
- * Pure function, stateless, idempotent
+ * Pure function, stateless, idempotent, complete sections
  */
 
 import { Layout } from '../components/layout.ts';
 import { Hero } from '../components/hero.ts';
+import { Services } from '../components/services.ts';
+import { Testimonials } from '../components/testimonials.ts';
+import { TrustBadges } from '../components/trustbadges.ts';
+import { CTA } from '../components/cta.ts';
 import { createHtmlResponse } from '../utils/response.ts';
 
 export const handleHome = (): Response => {
-  const content = Hero();
+  const content = `
+    ${Hero()}
+    ${Services()}
+    ${Testimonials()}
+    ${TrustBadges()}
+    ${CTA()}
+  `;
 
   const html = Layout({
     title: 'Expert Garage Door Services in Bend, Oregon',
