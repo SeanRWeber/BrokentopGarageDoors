@@ -1,35 +1,33 @@
 /**
  * Header component - Single Responsibility: Site header HTML
- * Pure function, accessible navigation
+ * Pure function, accessible navigation, matches homepage.html structure
  */
-
-import { BUSINESS_INFO } from '../constants/business';
-import { escapeHtml } from '../utils/sanitize';
 
 export const Header = (): string => `
 <header>
-  <div class="container">
-    <div class="logo">
-      <a href="/">${escapeHtml(BUSINESS_INFO.name)}</a>
-    </div>
-    <nav class="nav-links">
-      <a href="/">Home</a>
-      <a href="/services">Services</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-      <a href="tel:${BUSINESS_INFO.phone}" class="cta-button">
-        ${BUSINESS_INFO.phone}
-      </a>
-    </nav>
+  <nav>
+    <a href="/" class="logo">Brokentop</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#areas">Service Areas</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#schedule" class="btn btn-primary">Schedule Service</a>
     <button class="mobile-menu-toggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-  </div>
-  <div class="mobile-nav">
-    <a href="/">Home</a>
-    <a href="/services">Services</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
-    <a href="tel:${BUSINESS_INFO.phone}" class="cta-button">Call Now</a>
-  </div>
-</header>`;
+  </nav>
+</header>
+<div class="mobile-nav">
+  <ul class="mobile-nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#areas">Service Areas</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#schedule" class="btn btn-primary btn-large">Schedule Service</a>
+</div>`;
+
