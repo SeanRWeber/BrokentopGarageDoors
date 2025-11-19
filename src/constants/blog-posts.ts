@@ -1,9 +1,13 @@
 /**
- * Blog posts - Single Responsibility: Blog content definitions
+ * Blog posts - Single Responsibility: Blog content aggregation
  * Immutable, SEO-optimized content
  */
 
 import type { BlogPost } from '../types/blog';
+import { POST_WINTER_CARE, POST_CHOOSING_DOOR } from './blog-posts-seasonal';
+import { POST_DOOR_WONT_CLOSE, POST_OPENER_LIFESPAN } from './blog-posts-repair';
+import { POST_DIY_DANGERS, POST_SAFETY_FEATURES } from './blog-posts-safety';
+import { POST_REPAIR_COSTS, POST_REPAIR_VS_REPLACE } from './blog-posts-cost';
 
 export const POST_MAINTENANCE_CHECKLIST: BlogPost = Object.freeze({
   slug: 'annual-garage-door-maintenance-checklist',
@@ -39,4 +43,12 @@ export const ALL_POSTS: readonly BlogPost[] = Object.freeze([
   POST_MAINTENANCE_CHECKLIST,
   POST_SPRING_SIGNS,
   POST_LUBRICATION_GUIDE,
+  POST_WINTER_CARE,
+  POST_CHOOSING_DOOR,
+  POST_DOOR_WONT_CLOSE,
+  POST_OPENER_LIFESPAN,
+  POST_DIY_DANGERS,
+  POST_SAFETY_FEATURES,
+  POST_REPAIR_COSTS,
+  POST_REPAIR_VS_REPLACE,
 ]);

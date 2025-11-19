@@ -17,6 +17,10 @@ import { handleGallery } from '../handlers/gallery';
 import { handleFaq } from '../handlers/faq';
 import { handleWarranties } from '../handlers/warranties';
 import { handleBlog } from '../handlers/blog';
+import { handleSchedule } from '../handlers/schedule';
+import { handleAccessibility } from '../handlers/accessibility';
+import { handleSitemap } from '../handlers/sitemap';
+import { handleSitemapXml } from '../handlers/sitemap-xml';
 import { handleCss } from '../handlers/css';
 import { handleJs } from '../handlers/js';
 
@@ -26,6 +30,7 @@ export const STATIC_ROUTES: readonly Route[] = Object.freeze([
   { path: '/contact', handler: handleContact },
   { path: '/quote', handler: handleQuote },
   { path: '/emergency', handler: handleEmergency },
+  { path: '/schedule', handler: handleSchedule },
   { path: '/services', handler: handleServices },
   { path: '/reviews', handler: handleReviews },
   { path: '/gallery', handler: handleGallery },
@@ -34,6 +39,9 @@ export const STATIC_ROUTES: readonly Route[] = Object.freeze([
   { path: '/blog', handler: handleBlog },
   { path: '/privacy-policy', handler: handlePrivacy },
   { path: '/terms-of-service', handler: handleTerms },
+  { path: '/accessibility', handler: handleAccessibility },
+  { path: '/sitemap', handler: handleSitemap },
+  { path: '/sitemap.xml', handler: handleSitemapXml },
   { path: '/styles.css', handler: handleCss },
   { path: '/app.js', handler: handleJs },
 ]);
