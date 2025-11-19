@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional garage door repair and installation in Central Oregon. Same-day service, free estimates. Family owned and operated.">
+    <title>Brokentop Garage Doors | Professional Garage Door Repair & Installation | Central Oregon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #0f3460;
+            --accent-color: #e94560;
+            --light-bg: #f8f9fa;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --success: #48bb78;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.75rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .phone-number {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .phone-number:hover {
+            color: var(--accent-color);
+        }
+
+        .license-info {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #d63651;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: var(--white);
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-button {
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .hero-button.primary {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .hero-button.primary:hover {
+            background-color: #d63651;
+            transform: translateY(-2px);
+        }
+
+        .hero-button.secondary {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .hero-button.secondary:hover {
+            background-color: var(--light-bg);
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background-color: var(--light-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+        }
+
+        /* Service Areas */
+        .service-areas {
+            background-color: var(--white);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .area-item {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            color: var(--text-dark);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .area-item:hover {
+            border-color: var(--accent-color);
+            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Brand Partners */
+        .brand-partners {
+            background-color: var(--light-bg);
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .brand-item {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .brand-item:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 1.5rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 1.5rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            line-height: 2;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .services-grid,
+            .features-grid,
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <a href="tel:541-203-7676" class="phone-number">📞 541-203-7676</a>
+            <span class="license-info">CCB License #209697</span>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <nav>
+            <a href="/" class="logo">Brokentop Garage Doors</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#areas">Service Areas</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#schedule" class="cta-button">Schedule Service</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional Garage Door Repair & Installation</h1>
+            <p>Serving Central Oregon with fast, reliable, and professional garage door services. Same-day service available!</p>
+            <div class="hero-buttons">
+                <a href="tel:541-203-7676" class="hero-button primary">Call Now: 541-203-7676</a>
+                <a href="#estimate" class="hero-button secondary">Get FREE Estimate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Complete garage door solutions for residential and commercial properties</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Garage Door Repair</h3>
+                <p>Expert repairs on all makes and models. From broken springs to malfunctioning openers, we fix it all quickly and professionally.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚪</div>
+                <h3>Door Installation</h3>
+                <p>Professional installation of new garage doors. We work with top brands to provide quality doors that enhance your home's curb appeal.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔩</div>
+                <h3>Spring Replacement</h3>
+                <p>Fast and safe garage door spring replacement. We stock high-quality springs for immediate service and long-lasting performance.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>Opener Service</h3>
+                <p>Installation, repair, and replacement of garage door openers. Specializing in LiftMaster and other premium brands.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>Panel Replacement</h3>
+                <p>Replace damaged panels without replacing the entire door. Cost-effective solution to restore your door's appearance and function.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Maintenance</h3>
+                <p>Preventive maintenance to keep your garage door running smoothly. Regular tune-ups extend the life of your door system.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <h2 class="section-title">Why Choose Brokentop Garage Doors?</h2>
+        <p class="section-subtitle">Family owned and operated, serving Central Oregon with pride</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <h3>Same-Day Service</h3>
+                <p>Fast response times for emergency repairs. We understand that garage door problems can't wait.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💰</div>
+                <h3>FREE Estimates</h3>
+                <p>No-obligation quotes on all services. Transparent pricing with no hidden fees.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                <h3>Local & Family Owned</h3>
+                <p>We're your neighbors, treating your home with the same care we treat our own.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✅</div>
+                <h3>Licensed & Insured</h3>
+                <p>Fully licensed (CCB #209697) and insured for your peace of mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section id="areas" class="service-areas">
+        <h2 class="section-title">Service Areas</h2>
+        <p class="section-subtitle">Proudly serving Central Oregon communities</p>
+        <div class="areas-grid">
+            <div class="area-item">Bend</div>
+            <div class="area-item">La Pine</div>
+            <div class="area-item">Madras</div>
+            <div class="area-item">Redmond</div>
+            <div class="area-item">Sisters</div>
+            <div class="area-item">Sunriver</div>
+            <div class="area-item">Terrebonne</div>
+            <div class="area-item">Prineville</div>
+        </div>
+    </section>
+
+    <!-- Brand Partners Section -->
+    <section class="brand-partners">
+        <h2 class="section-title">Trusted Brand Partners</h2>
+        <p class="section-subtitle">We install and service premium garage door brands</p>
+        <div class="brands-grid">
+            <div class="brand-item">LiftMaster</div>
+            <div class="brand-item">CHI</div>
+            <div class="brand-item">Amarr</div>
+            <div class="brand-item">Hörmann</div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Need Garage Door Service Today?</h2>
+        <p>Call us now for fast, professional service you can trust</p>
+        <div class="hero-buttons">
+            <a href="tel:541-203-7676" class="hero-button primary">Call: 541-203-7676</a>
+            <a href="#schedule" class="hero-button secondary">Schedule Online</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Brokentop Garage Doors</h3>
+                <p>Professional garage door repair and installation serving Central Oregon.</p>
+                <p><strong>Phone:</strong> 541-203-7676</p>
+                <p><strong>License:</strong> CCB #209697</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#services">Services</a>
+                <a href="#areas">Service Areas</a>
+                <a href="#about">About Us</a>
+                <a href="#schedule">Schedule Service</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#repair">Garage Door Repair</a>
+                <a href="#installation">Door Installation</a>
+                <a href="#springs">Spring Replacement</a>
+                <a href="#openers">Opener Service</a>
+            </div>
+            <div class="footer-section">
+                <h3>Service Areas</h3>
+                <a href="#bend">Bend, OR</a>
+                <a href="#redmond">Redmond, OR</a>
+                <a href="#sisters">Sisters, OR</a>
+                <a href="#lapine">La Pine, OR</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Brokentop Garage Doors. All rights reserved. | Family Owned & Operated | Serving Central Oregon</p>
+        </div>
+    </footer>
+</body>
+</html>
