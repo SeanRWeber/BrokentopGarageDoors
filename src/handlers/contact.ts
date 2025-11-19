@@ -3,9 +3,9 @@
  * Pure function, contact information display
  */
 
-import { Layout } from '../components/layout.ts';
-import { BUSINESS_INFO, BUSINESS_HOURS, SERVICE_AREAS } from '../constants/business.ts';
-import { createHtmlResponse } from '../utils/response.ts';
+import { Layout } from '../components/layout';
+import { BUSINESS_INFO, BUSINESS_HOURS, SERVICE_AREAS } from '../constants/business';
+import { createHtmlResponse } from '../utils/response';
 
 export const handleContact = (): Response => {
   const areas = SERVICE_AREAS.join(', ');

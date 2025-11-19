@@ -3,7 +3,7 @@
  * Pure function, cached headers, navigation logic
  */
 
-import { NAVIGATION_SCRIPT } from '../assets/navigation.ts';
+import { NAVIGATION_SCRIPT } from '../assets/navigation';
 
 const JS_HEADERS: Readonly<Record<string, string>> = Object.freeze({
   'Content-Type': 'application/javascript; charset=utf-8',

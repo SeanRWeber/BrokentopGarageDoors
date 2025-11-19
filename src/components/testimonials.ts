@@ -3,8 +3,8 @@
  * Pure function, E-E-A-T trust signals
  */
 
-import { TESTIMONIALS } from '../constants/testimonials.ts';
-import { escapeHtml } from '../utils/sanitize.ts';
+import { TESTIMONIALS } from '../constants/testimonials';
+import { escapeHtml } from '../utils/sanitize';
 
 export const Testimonials = (): string => {
   const cards = TESTIMONIALS.map((testimonial) => {

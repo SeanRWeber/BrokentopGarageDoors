@@ -3,7 +3,7 @@
  * Zero magic values, centralized source of truth
  */
 
-import type { BusinessInfo } from '../types/business.ts';
+import type { BusinessInfo } from '../types/business';
 
 export const BUSINESS_INFO: Readonly<BusinessInfo> = Object.freeze({
   name: 'Brokentop Garage Doors',

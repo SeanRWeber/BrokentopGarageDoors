@@ -3,7 +3,7 @@
  * Pure function, cached headers, minified output
  */
 
-import { COMPLETE_STYLES } from '../assets/styles.ts';
+import { COMPLETE_STYLES } from '../assets/styles';
 
 const CSS_HEADERS: Readonly<Record<string, string>> = Object.freeze({
   'Content-Type': 'text/css; charset=utf-8',

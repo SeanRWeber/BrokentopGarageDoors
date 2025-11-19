@@ -3,8 +3,8 @@
  * Pure function, accessible navigation
  */
 
-import { BUSINESS_INFO } from '../constants/business.ts';
-import { escapeHtml } from '../utils/sanitize.ts';
+import { BUSINESS_INFO } from '../constants/business';
+import { escapeHtml } from '../utils/sanitize';
 
 export const Header = (): string => `
 <header>

@@ -3,8 +3,8 @@
  * Pure function, user-friendly error page, correct status code
  */
 
-import { Layout } from '../components/layout.ts';
-import { createNotFoundResponse } from '../utils/response.ts';
+import { Layout } from '../components/layout';
+import { createNotFoundResponse } from '../utils/response';
 
 export const handleNotFound = (): Response => {
   const content = `

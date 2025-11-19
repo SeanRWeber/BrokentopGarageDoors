@@ -3,13 +3,13 @@
  * Pure function, stateless, idempotent, complete sections
  */
 
-import { Layout } from '../components/layout.ts';
-import { Hero } from '../components/hero.ts';
-import { Services } from '../components/services.ts';
-import { Testimonials } from '../components/testimonials.ts';
-import { TrustBadges } from '../components/trustbadges.ts';
-import { CTA } from '../components/cta.ts';
-import { createHtmlResponse } from '../utils/response.ts';
+import { Layout } from '../components/layout';
+import { Hero } from '../components/hero';
+import { Services } from '../components/services';
+import { Testimonials } from '../components/testimonials';
+import { TrustBadges } from '../components/trustbadges';
+import { CTA } from '../components/cta';
+import { createHtmlResponse } from '../utils/response';
 
 export const handleHome = (): Response => {
   const content = `

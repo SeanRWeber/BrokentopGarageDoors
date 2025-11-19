@@ -3,7 +3,7 @@
  * Pure function, conversion optimized
  */
 
-import { BUSINESS_INFO } from '../constants/business.ts';
+import { BUSINESS_INFO } from '../constants/business';
 
 export const Hero = (): string => `
 <section class="hero">

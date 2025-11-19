@@ -3,8 +3,8 @@
  * Pure function, data-driven rendering
  */
 
-import { SERVICES } from '../constants/services.ts';
-import { escapeHtml } from '../utils/sanitize.ts';
+import { SERVICES } from '../constants/services';
+import { escapeHtml } from '../utils/sanitize';
 
 export const Services = (): string => {
   const cards = SERVICES.map((service) => `

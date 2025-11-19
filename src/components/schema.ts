@@ -3,7 +3,7 @@
  * Pure function, E-E-A-T optimized, JSON-LD format
  */
 
-import { BUSINESS_INFO } from '../constants/business.ts';
+import { BUSINESS_INFO } from '../constants/business';
 
 export const Schema = (): string => {
   const schema = {

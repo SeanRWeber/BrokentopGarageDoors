@@ -3,10 +3,10 @@
  * Pure function, consistent structure
  */
 
-import { Meta } from './meta.ts';
-import { Schema } from './schema.ts';
-import { Header } from './header.ts';
-import { Footer } from './footer.ts';
+import { Meta } from './meta';
+import { Schema } from './schema';
+import { Header } from './header';
+import { Footer } from './footer';
 
 interface LayoutProps {
   readonly title: string;

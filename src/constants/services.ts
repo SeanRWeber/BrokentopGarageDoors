@@ -3,7 +3,7 @@
  * Immutable service catalog, zero runtime overhead
  */
 
-import type { Service } from '../types/business.ts';
+import type { Service } from '../types/business';
 
 export const SERVICES: readonly Service[] = Object.freeze([
   {

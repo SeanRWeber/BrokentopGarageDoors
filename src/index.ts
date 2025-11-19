@@ -3,7 +3,7 @@
  * Cloudflare Workers edge handler, zero globals
  */
 
-import { findRoute } from './router/routes.ts';
+import { findRoute } from './router/routes';
 
 export default {
   async fetch(request: Request): Promise<Response> {

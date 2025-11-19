@@ -3,7 +3,7 @@
  * Pure function, legal compliance, contact info
  */
 
-import { BUSINESS_INFO, SERVICE_AREAS, BUSINESS_HOURS } from '../constants/business.ts';
+import { BUSINESS_INFO, SERVICE_AREAS, BUSINESS_HOURS } from '../constants/business';
 
 export const Footer = (): string => {
   const currentYear = new Date().getFullYear();

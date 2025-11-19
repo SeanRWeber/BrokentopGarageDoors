@@ -3,10 +3,10 @@
  * Pure function, service catalog display
  */
 
-import { Layout } from '../components/layout.ts';
-import { Services } from '../components/services.ts';
-import { CTA } from '../components/cta.ts';
-import { createHtmlResponse } from '../utils/response.ts';
+import { Layout } from '../components/layout';
+import { Services } from '../components/services';
+import { CTA } from '../components/cta';
+import { createHtmlResponse } from '../utils/response';
 
 export const handleServices = (): Response => {
   const content = `

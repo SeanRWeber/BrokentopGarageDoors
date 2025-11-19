@@ -3,11 +3,11 @@
  * Pure function, company information display
  */
 
-import { Layout } from '../components/layout.ts';
-import { BUSINESS_INFO } from '../constants/business.ts';
-import { TrustBadges } from '../components/trustbadges.ts';
-import { CTA } from '../components/cta.ts';
-import { createHtmlResponse } from '../utils/response.ts';
+import { Layout } from '../components/layout';
+import { BUSINESS_INFO } from '../constants/business';
+import { TrustBadges } from '../components/trustbadges';
+import { CTA } from '../components/cta';
+import { createHtmlResponse } from '../utils/response';
 
 export const handleAbout = (): Response => {
   const content = `

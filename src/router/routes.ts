@@ -3,14 +3,14 @@
  * Immutable route table, zero runtime overhead, complete site map
  */
 
-import type { Route } from '../types/core.ts';
-import { handleHome } from '../handlers/home.ts';
-import { handleServices } from '../handlers/services.ts';
-import { handleAbout } from '../handlers/about.ts';
-import { handleContact } from '../handlers/contact.ts';
-import { handleNotFound } from '../handlers/notfound.ts';
-import { handleCss } from '../handlers/css.ts';
-import { handleJs } from '../handlers/js.ts';
+import type { Route } from '../types/core';
+import { handleHome } from '../handlers/home';
+import { handleServices } from '../handlers/services';
+import { handleAbout } from '../handlers/about';
+import { handleContact } from '../handlers/contact';
+import { handleNotFound } from '../handlers/notfound';
+import { handleCss } from '../handlers/css';
+import { handleJs } from '../handlers/js';
 
 export const ROUTES: readonly Route[] = Object.freeze([
   { path: '/', handler: handleHome },

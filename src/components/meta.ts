@@ -3,8 +3,8 @@
  * Pure function, SEO optimized, YMYL compliant, XSS protected
  */
 
-import { BUSINESS_INFO } from '../constants/business.ts';
-import { escapeHtml, sanitizeUrl } from '../utils/sanitize.ts';
+import { BUSINESS_INFO } from '../constants/business';
+import { escapeHtml, sanitizeUrl } from '../utils/sanitize';
 
 interface MetaProps {
   readonly title: string;

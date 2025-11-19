@@ -3,7 +3,7 @@
  * Immutable testimonial catalog, E-E-A-T optimized
  */
 
-import type { Testimonial } from '../types/business.ts';
+import type { Testimonial } from '../types/business';
 
 export const TESTIMONIALS: readonly Testimonial[] = Object.freeze([
   {
