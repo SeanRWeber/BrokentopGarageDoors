@@ -1,49 +1,39 @@
 /**
- * Routes configuration - Single Responsibility: Route definitions
- * Immutable route table, zero runtime overhead, complete site map
+ * Routes configuration - Single Responsibility: Route aggregation
+ * Immutable route table, DRY dynamic generation
  */
 
 import type { Route } from '../types/core';
-import { handleHome } from '../handlers/home';
-import { handleServices } from '../handlers/services';
-import { handleAbout } from '../handlers/about';
-import { handleContact } from '../handlers/contact';
-import { handleQuote } from '../handlers/quote';
-import { handleEmergency } from '../handlers/emergency';
-import { handlePrivacy } from '../handlers/privacy';
-import { handleTerms } from '../handlers/terms';
+import { STATIC_ROUTES } from './routes-static';
 import { handleNotFound } from '../handlers/notfound';
-import { handleCss } from '../handlers/css';
-import { handleJs } from '../handlers/js';
 import { createServiceHandler } from '../handlers/service-detail';
 import { createLocationHandler } from '../handlers/location-detail';
-import { SERVICE_RESIDENTIAL_REPAIR, SERVICE_SPRING_REPLACEMENT, SERVICE_OPENER_REPAIR } from '../constants/service-data';
-import { LOCATION_BEND, LOCATION_REDMOND, LOCATION_SISTERS } from '../constants/location-data';
+import { createBlogPostHandler } from '../handlers/blog-post';
+import { ALL_SERVICES } from '../constants/service-data';
+import { ALL_LOCATIONS } from '../constants/location-data';
+import { ALL_POSTS } from '../constants/blog-posts';
+
+const serviceRoutes: Route[] = ALL_SERVICES.map(s => ({
+  path: `/services/${s.slug}`,
+  handler: createServiceHandler(s),
+}));
+
+const locationRoutes: Route[] = ALL_LOCATIONS.map(l => ({
+  path: `/locations/${l.slug}`,
+  handler: createLocationHandler(l),
+}));
+
+const blogRoutes: Route[] = ALL_POSTS.map(p => ({
+  path: `/blog/${p.slug}`,
+  handler: createBlogPostHandler(p),
+}));
 
 export const ROUTES: readonly Route[] = Object.freeze([
-  { path: '/', handler: handleHome },
-  { path: '/index.html', handler: handleHome },
-  { path: '/about', handler: handleAbout },
-  { path: '/contact', handler: handleContact },
-  { path: '/quote', handler: handleQuote },
-  { path: '/emergency', handler: handleEmergency },
-  { path: '/services', handler: handleServices },
-  { path: `/services/${SERVICE_RESIDENTIAL_REPAIR.slug}`, handler: createServiceHandler(SERVICE_RESIDENTIAL_REPAIR) },
-  { path: `/services/${SERVICE_SPRING_REPLACEMENT.slug}`, handler: createServiceHandler(SERVICE_SPRING_REPLACEMENT) },
-  { path: `/services/${SERVICE_OPENER_REPAIR.slug}`, handler: createServiceHandler(SERVICE_OPENER_REPAIR) },
-  { path: `/locations/${LOCATION_BEND.slug}`, handler: createLocationHandler(LOCATION_BEND) },
-  { path: `/locations/${LOCATION_REDMOND.slug}`, handler: createLocationHandler(LOCATION_REDMOND) },
-  { path: `/locations/${LOCATION_SISTERS.slug}`, handler: createLocationHandler(LOCATION_SISTERS) },
-  { path: '/privacy-policy', handler: handlePrivacy },
-  { path: '/terms-of-service', handler: handleTerms },
-  { path: '/styles.css', handler: handleCss },
-  { path: '/app.js', handler: handleJs },
+  ...STATIC_ROUTES,
+  ...serviceRoutes,
+  ...locationRoutes,
+  ...blogRoutes,
 ]);
 
-export const findRoute = (pathname: string): Route => {
-  const normalized = pathname === '/index.html' ? '/' : pathname;
-  return ROUTES.find((route) => route.path === normalized) ?? {
-    path: '*',
-    handler: handleNotFound,
-  };
-};
+export const findRoute = (pathname: string): Route =>
+  ROUTES.find(r => r.path === pathname) ?? { path: '*', handler: handleNotFound };
