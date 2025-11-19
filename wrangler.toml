@@ -1,0 +1,14 @@
+name = "brokentop-garage-doors"
+main = "src/index.ts"
+compatibility_date = "2024-11-19"
+node_compat = true
+
+[build]
+command = "npm run build"
+
+[env.production]
+name = "brokentop-garage-doors"
+route = "brokentopgaragedoors.com/*"
+
+[env.development]
+name = "brokentop-garage-doors-dev"
