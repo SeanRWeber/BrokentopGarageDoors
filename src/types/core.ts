@@ -15,7 +15,7 @@ export interface Route {
 export type RouteHandler = (req: Request) => Promise<Response> | Response;
 
 export interface HtmlProps {
-  readonly [key: string]: string | number | boolean | readonly string[];
+  readonly [key: string]: string | number | boolean | readonly string[] | undefined;
 }
 
 export interface ComponentProps extends HtmlProps {
